@@ -1,12 +1,12 @@
 import React from 'react';
 import GenericForm from '../GenericForm';
 
-const ClientForm = ({ client, handleInputChange, handleSubmit, handleCancel }) => {
+const CarForm = ({ Car, handleInputChange, handleSubmit, handleCancel }) => {
   return (
     <GenericForm
-      formData={client}
+      formData={Car}
       fields={[
-        { name: 'clientName', label: 'Client Name', type: 'text', placeholder: 'Enter the name of the client' },
+        { name: 'CarName', label: 'Car Name', type: 'text', placeholder: 'Enter the name of the Car' },
         { name: 'industry', label: 'Industry', type: 'text', placeholder: 'Enter the industry market' },
       ]}
       handleInputChange={handleInputChange}
@@ -16,4 +16,4 @@ const ClientForm = ({ client, handleInputChange, handleSubmit, handleCancel }) =
   );
 };
 
-export default ClientForm;
+export default CarForm;

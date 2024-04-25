@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Register from './components/RegisterFolder/Register';
-import Clients from './components/CarFolder/Clients'
+import Cars from './components/CarFolder/Cars'
 
 
 function App() {
   return (
     <div className="App">
-      <Clients/>
+      <Cars/>
     </div>
   );
 }
