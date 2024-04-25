@@ -3,6 +3,7 @@ import axios from 'axios';
 import { API_BASE_URL } from '../../apiConfig';
 import RegisterForm from './RegisterForm';
 import Login from '../LoginFolder/Login';
+import styles from '../../Register.module.css';
 
 const Register = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });
@@ -26,12 +27,11 @@ const Register = () => {
     e.preventDefault();
   
     try {
-      const registrationResponse = await axios.post(`${API_BASE_URL}account/register`, formData);
+      const registrationResponse = await axios.post(`${API_BASE_URL}Account/register`, formData);
       console.log(registrationResponse.data);
-      // Reset form data after successful registration
       setFormData({ email: '', password: '' });
       setError('');
-      setIsLoggingIn(true); // Redirect to login after registration
+      setIsLoggingIn(true);
     } catch (error) {
       console.error('Error registering user:', error);
       setFormData({ email: '', password: '' });
@@ -53,7 +53,7 @@ const Register = () => {
 
   return (
     <div>
-      {error && <div className="alert alert-warning" role="alert">{error}</div>}
+      {error && <div className={`${styles.errorAlert}`}>{error}</div>}
         <RegisterForm
           formData={formData}
           handleInputChange={handleInputChange}

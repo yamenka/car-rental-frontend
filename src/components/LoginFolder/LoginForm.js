@@ -1,5 +1,6 @@
 import React from 'react';
 import GenericForm from '../GenericForm';
+import styles from '../../LoginForm.module.css';  // Importing the CSS module
 
 const LoginForm = ({ formData, handleInputChange, handleSubmit, handleRegister }) => {
   const fields = [
@@ -8,8 +9,8 @@ const LoginForm = ({ formData, handleInputChange, handleSubmit, handleRegister }
   ];
 
   return (
-    <div className="d-flex justify-content-center align-items-center" style={{ minHeight: '100vh' }}>
-      <div className="w-100" style={{ maxWidth: '400px' }}>
+    <div className={styles.loginFormContainer}>
+      <div className={styles.formWrapper}>
         <h2>Login:</h2>
         <GenericForm
           formData={formData}
@@ -17,7 +18,7 @@ const LoginForm = ({ formData, handleInputChange, handleSubmit, handleRegister }
           handleInputChange={handleInputChange}
           handleSubmit={handleSubmit}
         />
-        <button onClick={handleRegister} className="btn btn-link">Don't have an account? Sign up</button>
+        <button onClick={handleRegister} className={`btn btn-link ${styles.registerLink}`}>Don't have an account? Sign up</button>
       </div>
     </div>
   );

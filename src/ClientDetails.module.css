@@ -1,0 +1,39 @@
+.clientDetailsContainer {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin: 20px;
+    width: fit-content;
+    min-width: 300px;
+}
+
+.title {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.detailItem {
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #666;
+}
+
+.transactionList {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.transactionItem {
+    background-color: #f2f2f2;
+    padding: 8px;
+    margin-top: 2px;
+    border-radius: 4px;
+}
+
+.loading, .error {
+    text-align: center;
+    padding: 20px;
+}

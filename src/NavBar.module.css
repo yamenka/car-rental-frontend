@@ -1,0 +1,29 @@
+.navTabs {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+  }
+  
+  .navItem {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .navLink {
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #007bff;
+    border-radius: 4px;
+  }
+  
+  .navLink.active {
+    color: #fff;
+    background-color: #007bff;
+  }
+  
+  .content {
+    padding: 20px;
+    border: 1px solid #dee2e6;
+    border-top: none;
+  }
+  

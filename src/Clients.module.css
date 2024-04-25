@@ -1,0 +1,32 @@
+.clientsContainer {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin: 20px auto;
+    width: fit-content;
+    min-width: 300px;
+}
+
+.title {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.clientList {
+    list-style-type: none;
+    padding: 0;
+}
+
+.clientItem {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #f2f2f2;
+    border-radius: 4px;
+}
+
+.loading, .error {
+    text-align: center;
+    padding: 20px;
+}

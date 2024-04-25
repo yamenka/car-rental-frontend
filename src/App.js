@@ -1,13 +1,9 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Register from './components/RegisterFolder/Register';
-import Cars from './components/CarFolder/Cars'
-
-
+import NavBar from './components/NavBar'; // Make sure the path is correct
 function App() {
   return (
     <div className="App">
-      <Cars/>
+      <NavBar/>
     </div>
   );
 }

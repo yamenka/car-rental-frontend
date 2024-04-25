@@ -1,0 +1,17 @@
+.registerFormContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.formWrapper {
+    width: 100%;
+    max-width: 400px;
+}
+
+.loginLink {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+}

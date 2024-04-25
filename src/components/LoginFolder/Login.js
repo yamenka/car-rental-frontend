@@ -3,11 +3,12 @@ import axios from 'axios';
 import { API_BASE_URL } from '../../apiConfig';
 import LoginForm from './LoginForm';
 import Register from '../RegisterFolder/Register';
+import styles from '../../Login.module.css';  
 
 const Login = ({ handleLoginSuccess }) => {
   const [formData, setFormData] = useState({ email: '', password: '' });
   const [error, setError] = useState('');
-  const [showRegister, setShowRegister] = useState(false); // State to toggle between Login and Register
+  const [showRegister, setShowRegister] = useState(false);
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -16,17 +17,17 @@ const Login = ({ handleLoginSuccess }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${API_BASE_URL}account/login`, formData);
+      const response = await axios.post(`${API_BASE_URL}Account/login`, formData);
       localStorage.setItem('token', response.data.token);
       axios.defaults.headers.common['Authorization'] = `Bearer ${response.data.token}`;
       setFormData({ email: '', password: '' });
       setError('');
-      handleLoginSuccess(response.data.token);  // Notify the parent component of successful login
+      handleLoginSuccess(response.data.token);
     } catch (error) {
-      console.error('Error logging in:', error);
-      setFormData({ email: '', password: '' });
-      setError('Invalid email or password');
-    }
+        console.error('Error logging in:', error.response);
+        setError(`Login error: ${error.response?.data?.message || 'Invalid email or password'}`);
+        setFormData({ ...formData, password: '' });
+      }
   };
 
   const handleRegister = () => {
@@ -38,7 +39,7 @@ const Login = ({ handleLoginSuccess }) => {
   } else {
     return (
       <div>
-        {error && <div className="alert alert-warning" role="alert">{error}</div>}
+        {error && <div className={`${styles.errorAlert}`}>{error}</div>}
         <LoginForm
           formData={formData}
           handleInputChange={handleInputChange}
